@@ -1,0 +1,48 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+data_key                                                                          0x02CE      16
+_seed                                                                             0x02DE       4
+_base_y                                                                           0x02E2       4
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+_lcd_x                                                                            R5           1
+_lcd_y                                                                            R4           1
+_lcd_maxx                                                                         R7           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+main                                                                              0x001D4     16
+ext_int1_isr                                                                      0x001E4     39
+init                                                                              0x0020B     49
+func1                                                                             0x0023C     24
+func2                                                                             0x00254     85
+keypad                                                                            0x002A9     90
+keypad3                                                                           0x00303     77
+func3                                                                             0x00350     23
+check_interrupt                                                                   0x00367     13
+speed                                                                             0x00374     70
+time                                                                              0x003BA     70
+w                                                                                 0x00400     74
+temp                                                                              0x0044A    109
+func5                                                                             0x004B7     13
+put_buff_G100                                                                     0x004C4     63
+_print_G100                                                                       0x00503    308
+sprintf                                                                           0x00637     52
+memset                                                                            0x0066B     16
+strlen                                                                            0x0067B     12
+strlenf                                                                           0x00687     13
+_lcd_write_nibble_G103                                                            0x00694     20
+_lcd_write_data                                                                   0x006A8     12
+lcd_gotoxy                                                                        0x006B4     13
+lcd_clear                                                                         0x006C1     12
+lcd_putchar                                                                       0x006CD     21
+lcd_puts                                                                          0x006E2     17
+lcd_init                                                                          0x006F3     46

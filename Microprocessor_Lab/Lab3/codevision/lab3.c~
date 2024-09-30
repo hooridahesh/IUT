@@ -1,0 +1,8 @@
+#include <header.h>
+
+void main(void){
+
+    init();
+    func1("dahesh","9821413");
+   
+}

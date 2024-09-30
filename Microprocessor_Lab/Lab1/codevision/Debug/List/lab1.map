@@ -1,0 +1,24 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+sevenSeg                                                                          0x0160      20
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+i                                                                                 R5           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+main                                                                              0x00065     15
+subRoutine1                                                                       0x00074     14
+subRoutine2                                                                       0x00082     17
+subRoutine3                                                                       0x00093     10
+subRoutine4                                                                       0x0009D     19
+subRoutine5                                                                       0x000B0     93
+subRoutine6                                                                       0x0010D    123

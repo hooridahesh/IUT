@@ -1,0 +1,7 @@
+#ifndef _Q1_INCLUDED_
+#define _Q1_INCLUDED_
+
+//unsigned int read_adc(unsigned char adc_input);
+void subTask1();
+
+#endif

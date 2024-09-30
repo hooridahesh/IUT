@@ -1,0 +1,12 @@
+VERSION:3 SOURCE_TIMESTAMP:5689B08C
+NODE:I LEVEL:0 LINE:24 "C:\cvavr\inc\mega16.h"
+NODE:I LEVEL:0 LINE:25 "C:\cvavr\inc\stdio.h"
+NODE:I LEVEL:0 LINE:28 "C:\cvavr\inc\alcd.h"
+NODE:V LEVEL:0 LINE:31 "period -> R4,R5"
+NODE:V LEVEL:0 LINE:32 "in_period -> R6,R7"
+NODE:F LEVEL:0 LINE:40 "ext_int2_isr(void)"
+NODE:F LEVEL:0 LINE:49 "timer1_ovf_isr(void)"
+NODE:F LEVEL:0 LINE:58 "main(void)"
+NODE:F LEVEL:0 LINE:74 "calPeriod(long per,long iMin,long iMax,long oMin,long oMax)"
+NODE:F LEVEL:0 LINE:79 "createWave(void)"
+NODE:F LEVEL:0 LINE:96 "init(void)"

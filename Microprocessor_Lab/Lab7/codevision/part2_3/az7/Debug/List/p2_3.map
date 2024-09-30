@@ -1,0 +1,69 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+buffer1                                                                           0x037B       8
+wr_index1                                                                         0x0383       1
+rd_index1                                                                         0x0384       1
+counter1                                                                          0x0385       1
+buffer2                                                                           0x0386       8
+wr_index2                                                                         0x038E       1
+rd_index2                                                                         0x038F       1
+counter2                                                                          0x0390       1
+_base_y                                                                           0x0391       4
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+buffer_overflow1                                                                  R2.0      1bit
+_lcd_x                                                                            R5           1
+_lcd_y                                                                            R4           1
+_lcd_maxx                                                                         R7           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+main                                                                              0x0019F     66
+init_configs                                                                      0x001E1     10
+init_PORTS                                                                        0x001EB     10
+init_LCD                                                                          0x001F5      4
+init_TIMERS                                                                       0x001F9     20
+init_INTERRUPTS                                                                   0x0020D      4
+init_USART                                                                        0x00211     11
+init_ANALOG                                                                       0x0021C      5
+init_ADC                                                                          0x00221      3
+init_SPI                                                                          0x00224      3
+init_TWI                                                                          0x00227      3
+usart_rx_isr                                                                      0x0022A     44
+usart_tx_isr                                                                      0x00256     36
+getchar                                                                           0x0027A     32
+putchar                                                                           0x0029A     41
+subtask2                                                                          0x002C3    108
+is_digit_valid                                                                    0x0032F     24
+subtask3                                                                          0x00347     84
+is_parentheses_valid                                                              0x0039B     23
+has_letter                                                                        0x003B2     31
+print_lcd                                                                         0x003D1     15
+print_terminal                                                                    0x003E0     17
+put_usart_G100                                                                    0x003F1     13
+_print_G100                                                                       0x003FE    308
+printf                                                                            0x00532     31
+get_usart_G100                                                                    0x00551     23
+_scanf_G100                                                                       0x00568    322
+scanf                                                                             0x006AA     29
+strlen                                                                            0x006C7     12
+strlenf                                                                           0x006D3     13
+_lcd_write_nibble_G102                                                            0x006E0     20
+_lcd_write_data                                                                   0x006F4     12
+lcd_gotoxy                                                                        0x00700     13
+lcd_clear                                                                         0x0070D     12
+lcd_putchar                                                                       0x00719     21
+lcd_puts                                                                          0x0072E     17
+lcd_init                                                                          0x0073F     46
+isalpha                                                                           0x0076D     13
+isdigit                                                                           0x0077A      9
+isspace                                                                           0x00783     11
+isxdigit                                                                          0x0078E     15

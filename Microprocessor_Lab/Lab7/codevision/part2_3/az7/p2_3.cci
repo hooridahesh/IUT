@@ -1,0 +1,5 @@
+VERSION:3 SOURCE_TIMESTAMP:56C57CE6
+NODE:I LEVEL:0 LINE:1 "C:\cvavr\BIN\az7\headers.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavr\BIN\az7\init_config.h"
+NODE:I LEVEL:0 LINE:3 "C:\cvavr\BIN\az7\subtask.h"
+NODE:F LEVEL:0 LINE:5 "main(void)"

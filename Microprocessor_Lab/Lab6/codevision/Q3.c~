@@ -1,0 +1,64 @@
+#include <headers.h>
+
+long int duty, old_duty, ocr;
+
+void init_Q3()
+{
+// Input/Output Ports initialization
+// Port A initialization
+// Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=In Bit2=In Bit1=In Bit0=In 
+DDRA=(0<<DDA7) | (0<<DDA6) | (0<<DDA5) | (0<<DDA4) | (0<<DDA3) | (0<<DDA2) | (0<<DDA1) | (0<<DDA0);
+// State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=T Bit2=T Bit1=T Bit0=T 
+PORTA=(0<<PORTA7) | (0<<PORTA6) | (0<<PORTA5) | (0<<PORTA4) | (0<<PORTA3) | (0<<PORTA2) | (0<<PORTA1) | (0<<PORTA0);
+
+// Port B initialization
+// Function: Bit7=In Bit6=In Bit5=In Bit4=In Bit3=Out Bit2=In Bit1=In Bit0=In 
+DDRB=(0<<DDB7) | (0<<DDB6) | (0<<DDB5) | (0<<DDB4) | (1<<DDB3) | (0<<DDB2) | (0<<DDB1) | (0<<DDB0);
+// State: Bit7=T Bit6=T Bit5=T Bit4=T Bit3=0 Bit2=T Bit1=T Bit0=T 
+PORTB=(0<<PORTB7) | (0<<PORTB6) | (0<<PORTB5) | (0<<PORTB4) | (0<<PORTB3) | (0<<PORTB2) | (0<<PORTB1) | (0<<PORTB0);
+
+// Timer/Counter 0 initialization
+// Clock source: System Clock
+// Clock value: 1000.000 kHz
+// Mode: Phase correct PWM top=0xFF
+// OC0 output: Non-Inverted PWM
+// Timer Period: 0.51 ms
+// Output Pulse(s):
+// OC0 Period: 0.51 ms Width: 0.102 ms
+TCCR0=(1<<WGM00) | (1<<COM01) | (0<<COM00) | (0<<WGM01) | (0<<CS02) | (1<<CS01) | (0<<CS00);
+TCNT0=0x00;
+
+// Timer(s)/Counter(s) Interrupt(s) initialization
+TIMSK=(0<<OCIE2) | (0<<TOIE2) | (0<<TICIE1) | (0<<OCIE1A) | (0<<OCIE1B) | (0<<TOIE1) | (0<<OCIE0) | (0<<TOIE0);
+
+    old_duty = ((adc_data[0]*100) / 1024);
+    duty = old_duty;
+    ocr = (2.5348 * duty) + 0.8484;
+    OCR0 = ocr;
+       
+// ADC initialization
+// ADC Clock frequency: 1000.000 kHz
+// ADC Voltage Reference: AVCC pin
+// ADC Auto Trigger Source: ADC Stopped
+ADMUX=FIRST_ADC_INPUT | ADC_VREF_TYPE;
+ADCSRA=(1<<ADEN) | (1<<ADSC) | (0<<ADATE) | (0<<ADIF) | (1<<ADIE) | (0<<ADPS2) | (1<<ADPS1) | (1<<ADPS0);
+SFIOR=(0<<ADTS2) | (0<<ADTS1) | (0<<ADTS0);
+
+lcd_init(16);
+
+// Global enable interrupts
+#asm("sei")
+}
+
+void subTask3(void)
+{
+    duty = ((adc_data[0]*100) / 1024);
+    if((duty > (1.05*old_duty)) || (duty < (0.95*old_duty)))
+    {
+        //more than 105% old_duty or less than 95% old_duty
+        old_duty = ((adc_data[0]*100) / 1024);
+        duty = old_duty;
+        ocr = (2.5348 * duty) + 0.8484;
+        OCR0 = ocr;
+    }
+}

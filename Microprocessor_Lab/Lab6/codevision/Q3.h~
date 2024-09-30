@@ -1,0 +1,7 @@
+#ifndef _Q3_INCLUDED_
+#define _Q3_INCLUDED_
+
+//void part3_init();
+void subTask3();
+
+#endif
