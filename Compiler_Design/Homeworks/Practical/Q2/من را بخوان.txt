@@ -1,0 +1,12 @@
+I put H instead of E`
+And A instead of T`
+
+That is, now the grammar is as follows:
+
+grammar= {
+    'E': ['TH'],
+    'H': ['+TH', ''],
+    'T': ['FA'],
+    'A': ['*FA', ''],
+    'F': ['(E)', 'id']
+}
